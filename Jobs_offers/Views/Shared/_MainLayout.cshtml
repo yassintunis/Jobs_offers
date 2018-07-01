@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--pour que responsive soit appliquer au téléphones mobiles il faut réajuster les largeurs des appareils ("device-width") -->
+    <meta name="viewport" content="width=device-width,initial scale=1" />
+    <title>@Page.Title</title>
+    <!--toujours on met les css dans le head sous title-->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Appel de nouveau style définies dans style.css-->
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+    <!-- at RenderSection("head", required: false)
+        on l utilise quand les pages ont des entetes different -->
+</head>
+    <body>
+        <!--navbar : partie fixe-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="Container">
+                <div class="navbar-header">
+                    <!-- data-toggle : l'action qui va se produire (collapse), l'action est appliqué sur tout le navbar qui a le ID "navbar"-->
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">
+                        <img src="#"/>
+
+                    </a>
+                </div>
+                <!-- c'est le contenu qui va être affiché lorsque on a pui sur le bouton juste au dessus -->
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                                Offers Types
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-info-sign"></i>
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                Contact us
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- Partie de registration user/passwrd-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-user"></i>
+                                Login
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-lock"></i>
+                                Register
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Partie variable -->
+        @RenderBody()
+
+        <!--footer : partie fixe-->
+        <footer class="navbar navbar-fixed-bottom myfooter">
+            <!-- class à crée-->
+            <div class="Container">
+                <!-- row est sous forme de grid qui contenant 12 colonnes -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-question-sign"></i>
+                            Description
+                        </h3>
+                        <p>
+                            Goautodial is the best there is , fast , intuitive. It made my job better. The part of Statistics is well structured but above all it is always changing and makes it unique.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-globe"></i>
+                            Important links
+                        </h3>
+                        <ul>
+                            <li> <a href="#">Jobs for Public sector</a>  </li>
+
+                            <li> <a href="#">Jobs for the Prived Sector</a> </li>
+
+                            <li> <a href="#">Internationnal Jobs </a> </li>
+
+                            <li> <a href="#">Other Jobs </a> </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            Social Medias
+                        </h3>
+
+                        <ul>
+                            <li> <a href="#">Our Facebook page</a>  </li>
+
+                            <li> <a href="#">Follow us on Twitter</a> </li>
+
+                            <li> <a href="#">Watch on Youtube </a> </li>
+
+                            <li> <a href="#">Send us a Message </a> </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="subfooter">
+                <!--class à crée-->
+                <span>All Right Reserved For Job Offers Website &copy; -2018</span>
+            </div>
+        </footer>
+        <!--il faut mettre les script Jquare avant le bootstrap-->
+        <!--les scripts doit être mis dans le footer pour ne pas empêcher le chargement de différents pages -->
+      <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </body>
+</html>

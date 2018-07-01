@@ -1,0 +1,55 @@
+﻿@font-face {
+    font-family: 'My_font_1';
+    src: url('font/Sextan-Light-Italic-FFP.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'My_font_2';
+    src: url('font/SCRIPALT.ttf') format('truetype');
+}
+.navbar-default {
+    background-color: #183ad2;
+    border-color: #f10808;
+   
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #e7e7e7;
+    font-family:My_font_1;
+
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color :#FFF;
+}
+/*Responsive navbar*/
+/*on va redéfinir le style de tout les li dans la block de ul (class="nav") telque on va définir la position*/
+.nav>li {
+    position: relative;
+    display: block;
+    height: 60px;
+    padding-top: 5px;
+}
+/*start- styles for Footer*/
+.myfooter{
+    background-color:cornflowerblue;
+    padding-top:10px;
+    font-family:My_font_1;
+    text-align:justify;
+}
+.subfooter {
+    background-color:#183ad2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.myfooter a{
+    color:azure;
+}
+.myfooter p{
+    color:azure;
+}
+.myfooter h3,ul,p {
+    margin-bottom:20px;
+    font-family:My_font_1;
+    list-style-type:none;
+}
+/*end- styles for Footer*/
