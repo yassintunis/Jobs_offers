@@ -17,8 +17,17 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
         </div>
-   </div>  
+    </div>
     /*start: ajouer champ user name */
+
+    /*start: ajouer champ DropDownlist lier au Viewbag(AccountController) */
+    <div class="form-group">
+        @Html.LabelFor(m => m.UserType, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.DropDownList("UserType", null, new { @class = "form-control" })
+        </div>
+    </div>     
+    /*start: ajouer champ DropDownlist lier au Viewbag(AccountController)(Raccord entre view et action)  */
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

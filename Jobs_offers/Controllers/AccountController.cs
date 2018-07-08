@@ -139,6 +139,14 @@ namespace WebApplication1.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            /*start: on ajoute le "ViewBag" 
+             (même fonction que templedata, session ),
+             pour envoyer les donnees entre les pages>> l'"Action" et le "View"*/
+            /*on ajoute une liste et on le rempli de la part de "l'Action" */
+
+            ViewBag.UserType = new SelectList(new[] {"Recruiters", "Candidate"});
+
+            /*end: on ajoute le ViewBag*/
             return View();
         }
 
@@ -151,9 +159,13 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*on doit remplir register post pour eviter les erreurs*/
+                ViewBag.UserType = new SelectList(new[] {"Recruiters", "Candidate"});
                 /*on ajoute le champ user name pour lier tt changement au database*/
-                var user = new ApplicationUser { UserName = model.Name, Email = model.Email };
-                /*on ajoute le champ "UserName = model.Name" pour lier tt changement au database*/
+                /* on ajoute "UserType=model.UserType" */
+                var user = new ApplicationUser { UserName = model.Name, Email = model.Email, UserType = model.UserType };
+
+               /*on ajoute le champ "UserName = model.Name" pour lier tt changement au database*/
                 /*aussi on peut sychrnoniser tout les nouveau champ ajouter avec data base ici */
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

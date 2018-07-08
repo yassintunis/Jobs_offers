@@ -70,6 +70,13 @@ namespace WebApplication1.Models
         [DisplayName("User Name: ")]
         public string Name { get; set; }
         /*end: ajouer champ user name */
+
+        /*start: ajouer champ UserType */
+        [Required]
+        [DisplayName("User Type: ")]
+        public string UserType { get; set; }
+        /*end: ajouer champ UserType */
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email:")]
